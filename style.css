@@ -1,0 +1,253 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;700;800&display=swap');
+
+
+:root {
+    --primary-bg: #141713;
+    --primary-text: #f0f0e8;
+    --accent: #c4f36b;
+    --card-bg: #20241e;
+    --muted-text: #b5baad;
+    --border-color: #3b4235;
+    --standard-gap: 32px;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+header {
+    padding: 20px 8%;
+    border-bottom: 1px solid var(--border-color);
+    overflow: auto;
+}
+
+header > a {
+    float: left;
+}
+
+header img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 16px #c4f36b22;
+}
+
+nav {
+    float: right;
+    margin-top: 12px;
+    background-color: transparent;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 22px;
+}
+
+nav a {
+    color: var(--primary-text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 7%;
+}
+
+main > section:first-child {
+    padding: 100px 0 90px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    margin: 0 0 18px;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -3px;
+}
+
+main > section:first-child p {
+    max-width: 600px;
+    color: var(--muted-text);
+    font-size: 18px;
+}
+
+
+section:not(:first-child) {
+    padding: 65px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h2 {
+    margin: 0 0 28px;
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#about p {
+    max-width: 760px;
+    margin-bottom: 20px;
+    color: #d5d8cf;
+}
+
+#about a {
+    border-bottom: 1px solid var(--accent);
+}
+
+
+#projects article {
+    margin-bottom: var(--standard-gap);
+    padding: 30px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px #00000020;
+}
+
+#projects article:hover {
+    border-color: var(--accent);
+}
+
+h3 {
+    margin: 0 0 14px;
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+#projects article p {
+    color: var(--muted-text);
+}
+
+#projects article ul {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#projects article li {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 5px 10px;
+    color: var(--accent);
+    background-color: #2a3024;
+    border: 1px solid #46513a;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+}
+
+
+#contact address {
+    font-style: normal;
+}
+
+#contact address p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#contact address a {
+    border-bottom: 1px solid var(--accent);
+}
+
+
+footer {
+    padding: 25px 7%;
+    color: var(--muted-text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    header img {
+        width: 42px;
+        height: 42px;
+    }
+
+    nav li {
+        margin-left: 8px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    main {
+        padding: 0 5%;
+    }
+
+    main > section:first-child {
+        padding: 65px 0;
+    }
+
+    h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    main > section:first-child p {
+        font-size: 16px;
+    }
+
+    section:not(:first-child) {
+        padding: 45px 0;
+    }
+
+    #projects article {
+        padding: 20px;
+    }
+
+    #contact address p {
+        font-size: 16px;
+        overflow-wrap: anywhere;
+    }
+}
