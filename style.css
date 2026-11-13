@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;700;800&display=swap');
-
 
 :root {
     --primary-bg: #141713;
@@ -9,6 +7,12 @@
     --card-bg: #20241e;
     --muted-text: #b5baad;
     --border-color: #3b4235;
+
+    --about-text: #d5d8cf;
+    --tag-bg: #2a3024;
+    --tag-border: #46513a;
+    --link-hover: #ffffff;
+
     --standard-gap: 32px;
     --content-width: 1000px;
     --section-spacing: 52px;
@@ -16,7 +20,21 @@
     --large-radius: 14px;
 }
 
+/* LIGHT MODE COLOR PALETTE */
 
+:root[data-theme="light"] {
+    --primary-bg: #f0f0e8;
+    --primary-text: #141713;
+    --accent: #577c19;
+    --card-bg: #ffffff;
+    --muted-text: #53594d;
+    --border-color: #c5cabb;
+
+    --about-text: #3b4235;
+    --tag-bg: #e6edda;
+    --tag-border: #c5d5ae;
+    --link-hover: #3b4235;
+}
 
 * {
     box-sizing: border-box;
@@ -35,6 +53,23 @@ body {
     line-height: 1.7;
 }
 
+/* SMOOTH THEME TRANSITIONS */
+
+body,
+header,
+section,
+article,
+footer,
+h1,
+h2,
+h3,
+p,
+a {
+    transition: background-color 250ms ease,
+                color 250ms ease,
+                border-color 250ms ease;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -47,7 +82,7 @@ a {
 }
 
 a:hover {
-    color: #ffffff;
+    color: var(--link-hover);
 }
 
 a:focus-visible {
@@ -56,6 +91,7 @@ a:focus-visible {
     border-radius: 2px;
 }
 
+/* HEADER */
 
 header {
     display: flex;
@@ -86,6 +122,34 @@ header > a:hover img {
     transform: scale(1.05);
     box-shadow: 0 0 24px #c4f36b35;
 }
+
+/* DARK/LIGHT MODE TOGGLE BUTTON */
+
+#theme-toggle {
+    padding: 9px 13px;
+    color: var(--primary-text);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--small-radius);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color 200ms ease,
+                color 200ms ease,
+                border-color 200ms ease;
+}
+
+#theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+#theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* NAVIGATION */
 
 nav {
     width: 100%;
@@ -121,6 +185,7 @@ nav a:focus-visible {
     color: var(--accent);
 }
 
+/* MAIN CONTENT */
 
 main {
     width: 100%;
@@ -152,6 +217,8 @@ main > section:first-child p {
     line-height: 1.8;
 }
 
+/* GENERAL SECTIONS */
+
 section:not(:first-child) {
     padding: var(--section-spacing) 0;
     border-bottom: 1px solid var(--border-color);
@@ -177,11 +244,12 @@ h2::after {
     content: "";
 }
 
+/* ABOUT SECTION */
 
 #about p {
     max-width: 760px;
     margin: 0 0 20px;
-    color: #d5d8cf;
+    color: var(--about-text);
     font-size: 15px;
 }
 
@@ -240,7 +308,8 @@ and content remain unchanged.
     box-shadow: 0 8px 24px #00000018;
     transition: border-color 200ms ease,
                 transform 200ms ease,
-                box-shadow 200ms ease;
+                box-shadow 200ms ease,
+                background-color 250ms ease;
 }
 
 #projects > article:last-child {
@@ -280,14 +349,15 @@ and content remain unchanged.
     margin: 0;
     padding: 5px 9px;
     color: var(--accent);
-    background-color: #2a3024;
-    border: 1px solid #46513a;
+    background-color: var(--tag-bg);
+    border: 1px solid var(--tag-border);
     border-radius: var(--small-radius);
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     line-height: 1.5;
 }
 
+/* CONTACT SECTION */
 
 #contact address {
     font-style: normal;
@@ -310,6 +380,7 @@ and content remain unchanged.
     border-color: transparent;
 }
 
+/* FOOTER */
 
 footer {
     padding: 24px 6%;
@@ -482,6 +553,7 @@ footer p {
     }
 }
 
+/* REDUCED MOTION ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
     html {
